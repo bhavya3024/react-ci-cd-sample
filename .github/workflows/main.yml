@@ -52,6 +52,8 @@ jobs:
         key: ${{ secrets.AZURE_VM_SSH_KEY }}
         source: "dist/**"
         target: "/var/www/html"
+        strip_components: 1
+
 
     - name: SSH into Azure VM and reload Nginx
       uses: appleboy/ssh-action@v0.1.10
