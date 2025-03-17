@@ -17,12 +17,15 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '22'  # or latest LTS
+    
+    - name: Install pnpm
+      run: npm install -g pnpm
 
     - name: Install dependencies
-      run: npm ci
+      run: pnpm i
 
     - name: Build Vite App
-      run: npm run build
+      run: pnpm run build
 
     - name: Upload production-ready build artifacts
       uses: actions/upload-artifact@v4
